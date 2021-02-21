@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model IQueryable<Book>
+
+<!--index page to display table of books. Uses razor code to pull data from the Model
+    loops through each one and displays in order. Added Bootstrap to create table and add
+    styling.
+    
+    -->
+
+<div class="text-center text-primary ">
+    <br />
+    <h1>Tyler's Bookstore</h1>
+    <br />
+    <br />
+</div>
+
+<table class="table">
+    <thead class="text-primary">
+        <tr>
+            <th scope="col">Book Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Publisher</th>
+            <th scope="col">ISBN</th>
+            <th scope="col">Classification/Category</th>
+            <th scope="col">Price</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var x in Model)
+        {
+        <tr>
+            <th scope="row" class="text-primary">@x.BookId</th>
+            <td>@x.Title</td>
+            <td>@x.Author</td>
+            <td>@x.Publisher</td>
+            <td>@x.ISBN</td>
+            <td>@x.Classification</td>
+            <td>@x.Price</td>
+        </tr>
+        }
+
+
+
+
+    </tbody>
+</table>
