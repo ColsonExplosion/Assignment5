@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Assignment5.Models.ViewModels;
 
 //added properties in the HomController
 //sent the index view the repository of .Books
@@ -17,6 +18,9 @@ namespace Assignment5.Controllers
         private readonly ILogger<HomeController> _logger;
         private IBookstoreRepository _repository;
 
+        public int PageSize = 5;
+
+
         public HomeController(ILogger<HomeController> logger, IBookstoreRepository repository)
         {
             _logger = logger;
@@ -24,9 +28,25 @@ namespace Assignment5.Controllers
             
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int page = 1)
         {
-            return View(_repository.Books);
+
+            return View(new BookListViewModel
+            {
+                Books = _repository.Books
+                .OrderBy(p => p.BookId)
+                .Skip((page - 1) * PageSize)
+                .Take(PageSize),
+
+                PagingInfo = new PagingInfo
+                {
+                    CurrentPage = page,
+                    ItemsPerPage = PageSize,
+                    TotalNumItems = _repository.Books.Count()
+                }
+
+            }) ;
+
         }
 
         public IActionResult Privacy()

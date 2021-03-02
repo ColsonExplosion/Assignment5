@@ -21,7 +21,11 @@ namespace Assignment5.Models
         public string ISBN { get; set; }
         public string Classification { get; set; }
 
+        public string Category { get; set; }
+
         public double Price { get; set; }
+
+        public int NumPages { get; set; }
 
     }
 }
