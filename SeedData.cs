@@ -6,6 +6,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+//this is building the seed data to be inputted into the database
+//we are creating new book objects and giving them attributes
+//it also checks for any pending migrations
+
 namespace Assignment5.Models
 {
     public static class SeedData

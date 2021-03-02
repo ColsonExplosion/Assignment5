@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+//this is creating variable we use for pagination
+
 namespace Assignment5.Models.ViewModels
 {
     public class PagingInfo

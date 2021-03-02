@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+//this is the tag helper that brings in pagination
 
 namespace Assignment5.Infrastructure
 {
