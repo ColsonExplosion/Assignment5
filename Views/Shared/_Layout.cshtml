@@ -9,11 +9,20 @@
     <title>@ViewData["Title"] - Assignment5</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" rel="stylesheet" />
+    <link href="/lib/font-awesome/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
-<div class="text-primary container-fluid border-dark p-5 text-center">
-    <h1>Tyler's Bookstore</h1>
-</div>
+    <div class="bg-dark text-white p-2">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col navbar-brand">Tyler's Bookstore</div>
+                <div class="col-6 text-right">
+                    <vc:cart-summary />
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="row m-1 p-1">
         <div class="col-3 text-center">
             <h2>You read it, we got it.</h2>
